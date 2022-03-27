@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class bottomview extends StatelessWidget {
-  const bottomview({Key? key}) : super(key: key);
+class BottomView extends StatelessWidget {
+  const BottomView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class bottomview extends StatelessWidget {
         child: Positioned(
           bottom: 0,
           child: Image(
-            image: AssetImage('asset/bottomview.png'),
+            image: const AssetImage('asset/bottomview.png'),
             width: MediaQuery.of(context).size.width,
           ),
         ));
