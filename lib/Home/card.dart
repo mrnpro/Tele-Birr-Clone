@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:telebirr/constants.dart';
 
-class cards extends StatelessWidget {
-  cards({Key? key, required this.title}) : super(key: key);
-  String title;
+class Card extends StatelessWidget {
+  const Card({Key? key, required this.title}) : super(key: key);
+  final String title;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,7 +14,7 @@ class cards extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(
+          const Center(
             child: Icon(
               Icons.account_balance,
               color: Colors.orange,
@@ -23,7 +23,7 @@ class cards extends StatelessWidget {
           ),
           Text(
             title,
-            style: TextStyle(color: ktextblue, fontWeight: txtstylebold),
+            style: const TextStyle(color: ktextblue, fontWeight: txtstylebold),
           )
         ],
       ),

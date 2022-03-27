@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:telebirr/Home/cards.dart';
-import 'package:telebirr/components/bottomview.dart';
+import 'package:telebirr/Home/card.dart' as MyCard;
+import 'package:telebirr/common/sizes.dart';
+import 'package:telebirr/components/bottom_view.dart';
+import 'package:telebirr/components/home_dashboard_row.dart';
 import 'package:telebirr/components/logo.dart';
 import 'package:telebirr/constants.dart';
 
@@ -13,29 +15,31 @@ class Home extends StatelessWidget {
         backgroundColor: kwhite,
         body: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.only(top: 20, left: 10, right: 10),
+            padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
             child: Column(
               children: [
                 Row(
                   children: [
                     Image(
-                      image: AssetImage('asset/logo2.png'),
+                      image: const AssetImage('asset/logo2.png'),
                       width: MediaQuery.of(context).size.width / 3,
                     ),
                   ],
                 ),
-                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Text(
-                    "Good Morning",
-                    style: TextStyle(fontSize: 20),
-                  )
-                ]),
-                SizedBox(
-                  height: 10,
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text(
+                        "Good Morning",
+                        style: TextStyle(fontSize: 20),
+                      )
+                    ]),
+                const SizedBox(
+                  height: Sizes.dimen_10,
                 ),
                 Container(
                   child: Stack(children: [
-                    Center(
+                    const Center(
                       child: Text(
                         "View Balance",
                         style: TextStyle(
@@ -46,67 +50,55 @@ class Home extends StatelessWidget {
                         right: 0,
                         child: IconButton(
                             onPressed: () {},
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.remove_red_eye_sharp,
                               color: ktextblue,
                             )))
                   ]),
-                  margin: EdgeInsets.symmetric(horizontal: 12),
+                  margin: const EdgeInsets.symmetric(horizontal: 12),
                   width: MediaQuery.of(context).size.width,
                   height: 50,
                   color: kgraylight,
                 ),
                 TextButton(
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       "Transaction Detail   >",
                       style: TextStyle(
                         color: ktextblue,
                       ),
                     )),
                 Container(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(Sizes.dimen_20),
                   child: Column(
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          cards(title: "Deposit Cash"),
-                          cards(title: "Buy Airtime/Package"),
-                        ],
+                      const HomeDashBoardRow(
+                        cardFirstTitle: "Deposit Cash",
+                        cardSecondTitle: "Buy Airtime/Package",
                       ),
-                      SizedBox(
-                        height: 10,
+                      const SizedBox(
+                        height: Sizes.dimen_10,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          cards(title: "Send Money"),
-                          cards(title: "Pay with telebirr"),
-                        ],
+                      const HomeDashBoardRow(
+                        cardFirstTitle: "Send Money",
+                        cardSecondTitle: "Pay with telebirr",
                       ),
-                      SizedBox(
-                        height: 10,
+                      const SizedBox(
+                        height: Sizes.dimen_10,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          cards(title: "Recieve Payment"),
-                          cards(title: "Pay for merchant"),
-                        ],
+                      const HomeDashBoardRow(
+                        cardFirstTitle: "Receive Payment",
+                        cardSecondTitle: "Pay for merchant",
                       ),
-                      SizedBox(
-                        height: 10,
+                      const SizedBox(
+                        height: Sizes.dimen_10,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          cards(title: "withdraw cash "),
-                          cards(title: "GERD"),
-                        ],
+                      const HomeDashBoardRow(
+                        cardFirstTitle: "withdraw cash ",
+                        cardSecondTitle: "GERD",
                       ),
-                      SizedBox(
-                        height: 10,
+                      const SizedBox(
+                        height: Sizes.dimen_10,
                       ),
                       MaterialButton(
                           height: 50,
@@ -116,41 +108,43 @@ class Home extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Home()));
+                                    builder: (context) => const Home()));
                           },
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(40)),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
+                            children: const [
                               Icon(
                                 Icons.qr_code,
                                 color: kwhite,
                               ),
                               Text(
                                 "Scan QR",
-                                style: TextStyle(color: kwhite, fontSize: 20),
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: Sizes.dimen_20),
                               )
                             ],
                           )),
-                      SizedBox(
-                        height: 10,
+                      const SizedBox(
+                        height: Sizes.dimen_10,
                       ),
                       MaterialButton(
                           height: 50,
                           minWidth: MediaQuery.of(context).size.width,
-                          color: kwhite,
+                          color: Colors.white,
                           onPressed: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Home()));
+                                    builder: (context) => const Home()));
                           },
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(40)),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
+                            children: const [
                               Icon(
                                 Icons.print,
                                 color: Colors.orange,
@@ -165,7 +159,7 @@ class Home extends StatelessWidget {
                     ],
                   ),
                   width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: kgraylight,
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(20),
