@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:telebirr/components/bottomview.dart';
+import 'package:telebirr/components/bottom_view.dart';
 import 'package:telebirr/components/logo.dart';
-import 'package:telebirr/constants.dart';
 
 class splash extends StatelessWidget {
   const splash({Key? key}) : super(key: key);
@@ -9,11 +8,9 @@ class splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: kwhite,
-        body: Container(
-          child: Stack(
-            children: [logo(), bottomview()],
-          ),
+        backgroundColor: Colors.white,
+        body: Stack(
+          children: const [Logo(), BottomView()],
         ));
   }
 }
