@@ -17,7 +17,7 @@ class login extends StatelessWidget {
             Container(
               height: MediaQuery.of(context).size.height,
             ),
-            logo(),
+            Logo(),
             loginbody(),
             Positioned(
               bottom: 0,
