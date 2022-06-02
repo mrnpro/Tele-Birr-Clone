@@ -1,6 +1,6 @@
 # Tele Birr UI Clone
 
-A new Flutter project.
+ 
 
 ## Screenshot 
 
